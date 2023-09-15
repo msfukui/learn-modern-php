@@ -1,4 +1,4 @@
 .*.swp
 /tmp
 /bin/composer
-/vendor/composer
+/vendor
