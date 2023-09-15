@@ -16,4 +16,4 @@ abs_dirname() {
 
 script_dir="$(abs_dirname "$0")"
 
-php -S localhost:8123 -c $script_dir/../etc/php.ini-development -t $script_dir/../public_html
+php -S localhost:8123 -c $script_dir/../config/php.ini-development -t $script_dir/../public
