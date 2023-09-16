@@ -2,9 +2,45 @@
 
 「モダン」とは何か? (を学ぶ個人的メモ)
 
+## ToDo
+
+* [x] PHP を入れる
+
+* [x] パッケージ管理ツールを入れる
+
+* [x] 単体テストツールを入れる
+
+* [x] フォーマッターを入れる
+
+* [ ] CI をセットアップする
+
+* [ ] サンプルアプリを書く
+
+* [ ] E2E テストツールを入れる
+
+* [ ] プライベートクラスタ環境にデプロイする
+
+* [ ] 開発環境をコンテナ化する
+
+## 幾つかの前提条件
+
+* コードは Vim で書きます
+
+    * LSP などの Vim 周りの設定はこの説明上からは一旦省略します
+
+* 手持ちの Intel Mac 上に環境を作ります
+
+    * Windows で作るなら WSL2 + Ubuntu で同じ様なことをやると思います
+
 ## 環境構築
 
 注: 以下の記述は一部私自身の環境に依存しています。
+
+### ディレクトリ構成
+
+当面は `pds/skeleton` に合わせようと思います。
+
+https://github.com/php-pds/skeleton
 
 ### PHP
 
@@ -58,7 +94,7 @@ $ ./vendor/bin/phpunit --version
 PHPUnit 10.3.4 by Sebastian Bergmann and contributors.
 ```
 
-以下、composer.json に autoload の設定を入れます。
+composer.json に autoload の設定を入れます。
 
 ```
 $ vim composer.json
@@ -77,7 +113,7 @@ Generating autoload files
 Generated autoload files
 ```
 
-src/, tests/ 配下に実コードとテストコードを配置して、いい感じにテストが動いたら一旦 OK です。
+src/, tests/ 配下に実コードとテストコードを配置して、いい感じにテストを動かします。
 
 ```
 $ ./vendor/bin/phpunit tests
@@ -92,11 +128,97 @@ Time: 00:00.004, Memory: 6.00 MB
 OK (1 test, 1 assertion)
 ```
 
-### ディレクトリ構成
+### PHP Coding Standards Fixer
 
-当面は `pds/skeleton` に合わせようと思います。
+```
+$ bin/composer require --dev friendsofphp/php-cs-fixer
+Info from https://repo.packagist.org: #StandWithUkraine
+./composer.json has been updated
+Running composer update friendsofphp/php-cs-fixer
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 24 installs, 0 updates, 0 removals
+...
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 24 installs, 0 updates, 0 removals
+...
+2 package suggestions were added by new dependencies, use `composer suggest` to see details.
+Generating autoload files
+44 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+No security vulnerability advisories found.
+Using version ^3.26 for friendsofphp/php-cs-fixer
+$ vendor/bin/php-cs-fixer --version
+PHP CS Fixer 3.26.1 Crank Cake by Fabien Potencier and Dariusz Ruminski.
+PHP runtime: 8.2.10
+```
 
-https://github.com/php-pds/skeleton
+設定を入れた状態で dry-run してみます。
+
+```
+$ ./vendor/bin/php-cs-fixer fix --dry-run --diff
+Loaded config default from "/Users/msfukui/studies/learn-modern-php/.php-cs-fixer.dist.php".
+Using cache file ".php-cs-fixer.cache".
+   1) tests/GreeterTest.php
+      ---------- begin diff ----------
+--- /Users/msfukui/studies/learn-modern-php/tests/GreeterTest.php
++++ /Users/msfukui/studies/learn-modern-php/tests/GreeterTest.php
+@@ -1,4 +1,6 @@
+-<?php declare(strict_types=1);
++<?php
++
++declare(strict_types=1);
+ use PHPUnit\Framework\TestCase;
+ 
+ final class GreeterTest extends TestCase
+@@ -5,7 +7,7 @@
+ {
+     public function testGreetsWithName(): void
+     {
+-        $greeter = new Greeter;
++        $greeter = new Greeter();
+ 
+         $greeting = $greeter->greet('Alice');
+ 
+
+      ----------- end diff -----------
+
+   2) src/Greeter.php
+      ---------- begin diff ----------
+--- /Users/msfukui/studies/learn-modern-php/src/Greeter.php
++++ /Users/msfukui/studies/learn-modern-php/src/Greeter.php
+@@ -1,4 +1,6 @@
+-<?php declare(strict_types=1);
++<?php
++
++declare(strict_types=1);
+ final class Greeter
+ {
+     public function greet(string $name): string
+
+      ----------- end diff -----------
+
+
+Found 2 of 2 files that can be fixed in 0.011 seconds, 14.000 MB memory used
+```
+
+良さそうなら fix します。
+
+```
+$ ./vendor/bin/php-cs-fixer fix
+Loaded config default from "/Users/msfukui/studies/learn-modern-php/.php-cs-fixer.dist.php".
+Using cache file ".php-cs-fixer.cache".
+   1) tests/GreeterTest.php
+   2) src/Greeter.php
+
+Fixed 2 of 2 files in 0.009 seconds, 14.000 MB memory used
+$ ./vendor/bin/php-cs-fixer fix --dry-run
+Loaded config default from "/Users/msfukui/studies/learn-modern-php/.php-cs-fixer.dist.php".
+Using cache file ".php-cs-fixer.cache".
+```
+
+設定ファイルは `.php-cs-fixer.dist.php` が共通で使うもの, `.php-cs-fixer.php` が個人で使うものとのことで .gitignore には `.php-cs-fixer.dist.php` とキャッシュの `.php-cs-fixer.cache` を追加します。
 
 ## 参考リンク
 
@@ -110,4 +232,12 @@ https://github.com/php-pds/skeleton
 
 * PHP Manual
 
-    https://www.php.net/manual/ja/index.php
+    https://www.php.net/manual/
+
+* PHPUnit
+
+    https://phpunit.de/
+
+* PHP Coding Standards Fixer
+
+    https://github.com/PHP-CS-Fixer/PHP-CS-Fixer
