@@ -12,7 +12,7 @@
 
 * [x] フォーマッターを入れる
 
-* [ ] CI をセットアップする
+* [x] 簡単な CI をセットアップする
 
 * [ ] サンプルアプリを書く
 
@@ -156,6 +156,8 @@ PHP runtime: 8.2.10
 
 設定を入れた状態で dry-run してみます。
 
+修正する差分があると以下の様な感じで表示されます。
+
 ```
 $ ./vendor/bin/php-cs-fixer fix --dry-run --diff
 Loaded config default from "/Users/msfukui/studies/learn-modern-php/.php-cs-fixer.dist.php".
@@ -218,7 +220,9 @@ Loaded config default from "/Users/msfukui/studies/learn-modern-php/.php-cs-fixe
 Using cache file ".php-cs-fixer.cache".
 ```
 
-設定ファイルは `.php-cs-fixer.dist.php` が共通で使うもの, `.php-cs-fixer.php` が個人で使うものとのことで .gitignore には `.php-cs-fixer.dist.php` とキャッシュの `.php-cs-fixer.cache` を追加します。
+設定ファイルは `.php-cs-fixer.dist.php` が共通で使うもの, `.php-cs-fixer.php` が個人で使うものとのことです。
+
+このため .gitignore には `.php-cs-fixer.dist.php` とキャッシュの `.php-cs-fixer.cache` を追加します。
 
 ## 参考リンク
 
@@ -241,3 +245,7 @@ Using cache file ".php-cs-fixer.cache".
 * PHP Coding Standards Fixer
 
     https://github.com/PHP-CS-Fixer/PHP-CS-Fixer
+
+* Setup PHP Action - Actions - Github Marketplace 
+
+    https://github.com/marketplace/actions/setup-php-action
