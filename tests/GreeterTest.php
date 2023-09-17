@@ -1,6 +1,9 @@
 <?php
 
 declare(strict_types=1);
+
+namespace LearnModernPhp;
+
 use PHPUnit\Framework\TestCase;
 
 final class GreeterTest extends TestCase

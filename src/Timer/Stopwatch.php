@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MyTimer;
+namespace LearnModernPhp\Timer;
 
-class Stopwatch
+final class Stopwatch
 {
     private $start;
     private $end;
