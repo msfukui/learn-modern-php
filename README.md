@@ -249,3 +249,47 @@ Using cache file ".php-cs-fixer.cache".
 * Setup PHP Action - Actions - Github Marketplace 
 
     https://github.com/marketplace/actions/setup-php-action
+
+* PHP Standards Recommendations
+
+    https://www.php-fig.org/psr/
+
+    PHP のおすすめの規約やインタフェースの集まり
+
+    公式ではないが PHP で影響力のある人たちが集まっている
+
+    * PSR-1 Coding Style Guide  
+      PSR-12 Extended Coding Style Guide
+
+        https://www.php-fig.org/psr/psr-1
+
+        https://www.php-fig.org/psr/psr-12
+
+        php-cs-fixer の設定でお世話になっている
+
+    * PSR-4 Autoloading Standard
+
+        https://www.php-fig.org/psr/psr-4
+
+        composer の autoload の理解に
+
+    * PSR-7 HTTP Message Interface  
+      PSR-15 HTTP Handlers  
+      PSR-17 HTTP Factories  
+      PSR-18: HTTP Client  
+
+        https://www.php-fig.org/psr/psr-7
+
+        https://www.php-fig.org/psr/psr-15
+
+        https://www.php-fig.org/psr/psr-17
+
+        https://www.php-fig.org/psr/psr-18
+
+        モダン(?)な Web アプリケーションフレームワークの理解に
+
+    * PSR-11 Container Interface
+
+        https://www.php-fig.org/psr/psr-11
+
+        DI コンテナの理解に
