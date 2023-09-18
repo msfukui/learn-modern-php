@@ -5,6 +5,8 @@ declare (strict_types=1);
 namespace LearnModernPhp\MyDiContainer;
 
 use Psr\Container\ContainerInterface;
+use LearnModernPhp\MyDiContainer\Fetcher;
+use LearnModernPhp\MyDiContainer\Fetcher\FetcherInterface;
 
 final class NotFoundException extends \RuntimeException
 {
@@ -31,7 +33,11 @@ final class Container implements ContainerInterface
     public function get($id)
     {
         if (array_key_exists($id, $this->data)) {
-            return $this->data[$id];
+            $data =  $this->data[$id];
+
+            return $data instanceof FetcherInterface
+                ? $data->fetch($this)
+                : $data;
         }
 
         throw new NotFoundException("Entry '{$id}' not found");
@@ -45,4 +51,9 @@ final class Container implements ContainerInterface
     {
         return array_key_exists($id, $this->data);
     }
+}
+
+function get(string $id): Fetcher\Get
+{
+    return new Fetcher\Get($id);
 }
