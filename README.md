@@ -2,6 +2,8 @@
 
 「モダン」とは何か? (を学ぶ個人的メモ)
 
+[![Format+UnitTest](https://github.com/msfukui/learn-modern-php/actions/workflows/php.yml/badge.svg)](https://github.com/msfukui/learn-modern-php/actions/workflows/php.yml)
+
 ## ToDo
 
 * [x] PHP を入れる
