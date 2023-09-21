@@ -57,3 +57,12 @@ function get(string $id): Fetcher\Get
 {
     return new Fetcher\Get($id);
 }
+
+/**
+ * @param class-string $class
+ * @return Fetcher\Autowire
+ */
+function autowire(string $class): Fetcher\Autowire
+{
+    return new Fetcher\Autowire($class);
+}

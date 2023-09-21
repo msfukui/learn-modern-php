@@ -295,3 +295,13 @@ Using cache file ".php-cs-fixer.cache".
         https://www.php-fig.org/psr/psr-11
 
         DI コンテナの理解に
+
+* 作って理解する DI コンテナ
+
+    https://tadsan.fanbox.cc/posts/2061773
+
+    constractor injection の簡易 DI コンテナの実装サンプルと背景説明
+
+    コード全体は以下の様です
+
+    https://github.com/bag2php/container

@@ -6,14 +6,6 @@ namespace LearnModernPhp\MyDiContainer\Fetcher;
 
 use LearnModernPhp\MyDiContainer\Container;
 
-interface FetcherInterface
-{
-    /**
-     * @return mixed
-     */
-    public function fetch(Container $container);
-}
-
 final class Get implements FetcherInterface
 {
     /** @var string $id */

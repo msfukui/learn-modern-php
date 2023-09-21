@@ -9,8 +9,10 @@ use PHPUnit\Framework\TestCase;
 
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message as HttpMessage;
+use LearnModernPhp\MyDiContainer\Http\JsonResponseFactory;
 
 use function LearnModernPhp\MyDiContainer\get;
+use function LearnModernPhp\MyDiContainer\autowire;
 
 final class ContainerTest extends TestCase
 {
@@ -20,7 +22,10 @@ final class ContainerTest extends TestCase
     {
         $this->container = new Container([
             'birthday' => '1990-01-01',
+            JsonResponseFactory::class => autowire(JsonResponseFactory::class),
             HttpMessage\RequestFactoryInterface::class => get(Psr17Factory::class),
+            HttpMessage\ResponseFactoryInterface::class => get(Psr17Factory::class),
+            HttpMessage\StreamFactoryInterface::class => get(Psr17Factory::class),
             Psr17Factory::class => new \Nyholm\Psr7\Factory\Psr17Factory(),
         ]);
     }
@@ -28,8 +33,14 @@ final class ContainerTest extends TestCase
     public static function ContainerGetOkForPsr17FactoryProvider(): array
     {
         return [
+            'JsonResponseFactory OK' =>
+                [JsonResponseFactory::class, JsonResponseFactory::class],
             'RequestFactoryInterface OK' =>
                 [HttpMessage\RequestFactoryInterface::class, Psr17Factory::class],
+            'ResponseFactoryInterface OK' =>
+                [HttpMessage\ResponseFactoryInterface::class, Psr17Factory::class],
+            'StreamFactoryInterface OK' =>
+                [HttpMessage\StreamFactoryInterface::class, Psr17Factory::class],
             'Psr17Factory OK' =>
                 [Psr17Factory::class, Psr17Factory::class ]
         ];
@@ -57,7 +68,10 @@ final class ContainerTest extends TestCase
     public static function ContainerHasOkForPsr17FactoryProvider(): array
     {
         return [
+            'JsonResponseFactory' => [JsonResponseFactory::class],
             'RequestFactoryInterface OK' => [HttpMessage\RequestFactoryInterface::class],
+            'ResponseFactoryInterface OK' => [HttpMessage\ResponseFactoryInterface::class],
+            'StreamFactoryInterface OK' => [HttpMessage\StreamFactoryInterface::class],
             'Psr17Factory OK' => [Psr17Factory::class],
         ];
     }
