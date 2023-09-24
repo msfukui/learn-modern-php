@@ -16,7 +16,7 @@
 
 * [x] 簡単な CI をセットアップする
 
-* [ ] サンプルアプリを書く
+* [x] サンプルアプリを書く
 
 * [ ] E2E テストツールを入れる
 
@@ -226,6 +226,23 @@ Using cache file ".php-cs-fixer.cache".
 
 このため .gitignore には `.php-cs-fixer.dist.php` とキャッシュの `.php-cs-fixer.cache` を追加します。
 
+## サンプルアプリ
+
+### MyRouter
+
+シンプルな Web アプリケーションのための router 。(未完成)
+
+使い方の例は public/MyRouter/index.php に書いていきます。
+
+書いたものをテストする場合は、以下を実行して、
+
+```
+$ bin/phpd public/MyRouter/.router.php
+[Fri Sep 22 23:29:21 2023] PHP 8.2.10 Development Server (http://localhost:8123) started
+```
+
+http://localhost:8123/(任意のパス名) にアクセスします。
+
 ## 参考リンク
 
 * モダンな PHP の開発の学び方
@@ -296,6 +313,12 @@ Using cache file ".php-cs-fixer.cache".
 
         DI コンテナの理解に
 
+    * PSR の誤解
+
+        https://qiita.com/tadsan/items/942a381e952e12a8fa5a
+
+        古い記事だが PSR の意味について明確に記載されている
+
 * 作って理解する DI コンテナ
 
     https://tadsan.fanbox.cc/posts/2061773
@@ -305,3 +328,51 @@ Using cache file ".php-cs-fixer.cache".
     コード全体は以下の様です
 
     https://github.com/bag2php/container
+
+* Router 関連
+
+    'PHP Router' と検索に入力すると先頭に '自作' とサジェストされるの良い
+
+    * PHPで高速に動作するURLルーティングを自作してみた
+
+        https://devpixiv.hatenablog.com/entry/2015/12/13/145741
+
+    * PHP - ルーティングを自作してみた
+
+        https://www.coccoto.com/2020/02/07.html
+
+    * kamiya-kei/LaralikeRouter
+
+        https://github.com/kamiya-kei/LaralikeRouter
+
+    * PHPでURLルーティングを自作する
+
+        https://speakerdeck.com/bmf_san/phpdeurlruteinguwozi-zuo-suru
+
+    * PHP8でフレームワークを作ってみた
+
+        https://zenn.dev/tasteck/articles/f8995584904959
+
+    * PSR-7とPSR-15を使ったWebアプリケーション開発
+
+        https://emonkak.hatenablog.com/entry/2016/12/09/114231
+
+        https://github.com/emonkak/php-router
+
+    * Rails のルーティング
+
+        https://railsguides.jp/routing.html
+
+        ルーティングの書き方の参考に
+
+* deptrac
+
+    https://qossmic.github.io/deptrac/
+
+    PHP の静的解析ツール, アーキテクチャテストに使われる, 一部は PHPStan と重複
+
+* PHPStan
+
+    https://phpstan.org/
+
+    PHP の静的解析ツール, バグ検出, PHPDoc による拡張された型検査などの機能を提供
