@@ -36,7 +36,7 @@ final class JsonResponse implements JsonSerializable, ResponseInterface
     /**
      * @phpstan-return array<K,V>
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->data;
     }
@@ -45,7 +45,7 @@ final class JsonResponse implements JsonSerializable, ResponseInterface
      * @phpstan-param array<K,V> $data
      * @return JsonResponse<K,V>
      */
-    public function withJsonData(?array $data)
+    public function withJsonData(?array $data): null|ResponseInterface|StreamFactoryInterface
     {
         return new static(
             $this->data ?? null,

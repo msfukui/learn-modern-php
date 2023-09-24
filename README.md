@@ -226,6 +226,43 @@ Using cache file ".php-cs-fixer.cache".
 
 このため .gitignore には `.php-cs-fixer.dist.php` とキャッシュの `.php-cs-fixer.cache` を追加します。
 
+## PHPStan
+
+```
+$ bin/composer require --dev phpstan/phpstan
+Info from https://repo.packagist.org: #StandWithUkraine
+./composer.json has been updated
+Running composer update phpstan/phpstan
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 1 install, 0 updates, 0 removals
+  - Locking phpstan/phpstan (1.10.35)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+  - Downloading phpstan/phpstan (1.10.35)
+  - Installing phpstan/phpstan (1.10.35): Extracting archive
+Generating autoload files
+46 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+No security vulnerability advisories found.
+Using version ^1.10 for phpstan/phpstan
+$ vendor/bin/phpstan --version
+PHPStan - PHP Static Analysis Tool 1.10.35
+$ vendor/bin/phpstan analyse src tests
+ 18/18 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+
+                                                                                                                        
+ [OK] No errors                                                                                                         
+                                                                                                                        
+
+💡 Tip of the Day:
+PHPStan is performing only the most basic checks.
+You can pass a higher rule level through the --level option
+(the default and current level is 0) to analyse code more thoroughly.
+```
+
 ## サンプルアプリ
 
 ### MyRouter
