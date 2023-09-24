@@ -1,4 +1,4 @@
-name: Format+UnitTest
+name: Format+TypeChecking+UnitTest
 
 on:
   push:
@@ -33,6 +33,9 @@ jobs:
 
     - name: Format
       run: vendor/bin/php-cs-fixer fix --dry-run --diff
+
+    - name: TypeChecking
+      run: vendor/bin/phpstan analyse src tests
 
     - name: UnitTest
       run: vendor/bin/phpunit tests
