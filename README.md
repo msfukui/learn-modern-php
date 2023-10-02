@@ -47,7 +47,7 @@ https://github.com/php-pds/skeleton
 ### PHP
 
 ```
-$ sudo port install php82 php82-mbstring php82-xdebug php82-openssl
+$ sudo port install php82 php82-mbstring php82-xdebug php82-openssl php82-iconv
 ...
 $ sudo port select --set php php82
 Selecting 'php82' for 'php' succeeded. 'php82' is now active.
@@ -226,7 +226,7 @@ Using cache file ".php-cs-fixer.cache".
 
 このため .gitignore には `.php-cs-fixer.dist.php` とキャッシュの `.php-cs-fixer.cache` を追加します。
 
-## PHPStan
+### PHPStan
 
 ```
 $ bin/composer require --dev phpstan/phpstan
@@ -261,6 +261,80 @@ $ vendor/bin/phpstan analyse src tests
 PHPStan is performing only the most basic checks.
 You can pass a higher rule level through the --level option
 (the default and current level is 0) to analyse code more thoroughly.
+```
+
+### PHP Insight
+
+```
+$ bin/composer require nunomaduro/phpinsights --dev
+Info from https://repo.packagist.org: #StandWithUkraine
+./composer.json has been updated
+Running composer update nunomaduro/phpinsights
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 16 installs, 0 updates, 0 removals
+  - Locking cmgmyr/phploc (8.0.3)
+  - Locking dealerdirect/phpcodesniffer-composer-installer (v1.0.0)
+  - Locking justinrainbow/json-schema (v5.2.13)
+  - Locking league/container (4.2.0)
+  - Locking nunomaduro/phpinsights (v2.8.0)
+  - Locking php-parallel-lint/php-parallel-lint (v1.3.2)
+  - Locking phpstan/phpdoc-parser (1.24.2)
+  - Locking psr/cache (3.0.0)
+  - Locking psr/simple-cache (3.0.0)
+  - Locking slevomat/coding-standard (8.13.4)
+  - Locking squizlabs/php_codesniffer (3.7.2)
+  - Locking symfony/cache (v6.3.5)
+  - Locking symfony/cache-contracts (v3.3.0)
+  - Locking symfony/http-client (v6.3.5)
+  - Locking symfony/http-client-contracts (v3.3.0)
+  - Locking symfony/var-exporter (v6.3.4)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 16 installs, 0 updates, 0 removals
+  - Downloading squizlabs/php_codesniffer (3.7.2)
+  - Downloading dealerdirect/phpcodesniffer-composer-installer (v1.0.0)
+  - Downloading symfony/http-client-contracts (v3.3.0)
+  - Downloading symfony/http-client (v6.3.5)
+  - Downloading symfony/var-exporter (v6.3.4)
+  - Downloading psr/cache (3.0.0)
+  - Downloading symfony/cache-contracts (v3.3.0)
+  - Downloading symfony/cache (v6.3.5)
+  - Downloading phpstan/phpdoc-parser (1.24.2)
+  - Downloading slevomat/coding-standard (8.13.4)
+  - Downloading psr/simple-cache (3.0.0)
+  - Downloading php-parallel-lint/php-parallel-lint (v1.3.2)
+  - Downloading league/container (4.2.0)
+  - Downloading justinrainbow/json-schema (v5.2.13)
+  - Downloading cmgmyr/phploc (8.0.3)
+  - Downloading nunomaduro/phpinsights (v2.8.0)
+  - Installing squizlabs/php_codesniffer (3.7.2): Extracting archive
+dealerdirect/phpcodesniffer-composer-installer contains a Composer plugin which is currently not in your allow-plugins config. See https://getcomposer.org/allow-plugins
+Do you trust "dealerdirect/phpcodesniffer-composer-installer" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?] y
+  - Installing dealerdirect/phpcodesniffer-composer-installer (v1.0.0): Extracting archive
+  - Installing symfony/http-client-contracts (v3.3.0): Extracting archive
+  - Installing symfony/http-client (v6.3.5): Extracting archive
+  - Installing symfony/var-exporter (v6.3.4): Extracting archive
+  - Installing psr/cache (3.0.0): Extracting archive
+  - Installing symfony/cache-contracts (v3.3.0): Extracting archive
+  - Installing symfony/cache (v6.3.5): Extracting archive
+  - Installing phpstan/phpdoc-parser (1.24.2): Extracting archive
+  - Installing slevomat/coding-standard (8.13.4): Extracting archive
+  - Installing psr/simple-cache (3.0.0): Extracting archive
+  - Installing php-parallel-lint/php-parallel-lint (v1.3.2): Extracting archive
+  - Installing league/container (4.2.0): Extracting archive
+  - Installing justinrainbow/json-schema (v5.2.13): Extracting archive
+  - Installing cmgmyr/phploc (8.0.3): Extracting archive
+  - Installing nunomaduro/phpinsights (v2.8.0): Extracting archive
+1 package suggestions were added by new dependencies, use `composer suggest` to see details.
+Generating autoload files
+55 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+PHP CodeSniffer Config installed_paths set to ../../slevomat/coding-standard
+No security vulnerability advisories found.
+Using version ^2.8 for nunomaduro/phpinsights
+$ ./bin/vendor/phpinsights
+...
 ```
 
 ## サンプルアプリ
@@ -413,3 +487,9 @@ http://localhost:8123/(任意のパス名) にアクセスします。
     https://phpstan.org/
 
     PHP の静的解析ツール, バグ検出, PHPDoc による拡張された型検査などの機能を提供
+
+* PHP Insights
+
+    https://phpinsights.com/
+
+    PHP のコード品質分析ツール, 循環度などを測定して表示してくれる
