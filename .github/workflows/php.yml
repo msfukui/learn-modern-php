@@ -38,4 +38,4 @@ jobs:
       run: vendor/bin/phpstan analyse src tests
 
     - name: UnitTest
-      run: vendor/bin/phpunit --display-warning tests
+      run: vendor/bin/phpunit --display-warning --display-notice tests
