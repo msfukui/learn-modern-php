@@ -470,11 +470,19 @@ http://localhost:8123/(任意のパス名) にアクセスします。
 
         https://github.com/emonkak/php-router
 
+    * PSR-HTTPシリーズを理解するための情報源
+
+        https://scrapbox.io/php/PSR-HTTP%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E6%83%85%E5%A0%B1%E6%BA%90
+
     * Rails のルーティング
 
         https://railsguides.jp/routing.html
 
         ルーティングの書き方の参考に
+
+    * PSR-15 Request Handlerから理解するMiddlewareの仕組み
+
+        https://speakerdeck.com/n1215/psr-15-request-handlerkarali-jie-surumiddlewarefalseshi-zu-mi
 
 * deptrac
 
@@ -493,3 +501,9 @@ http://localhost:8123/(任意のパス名) にアクセスします。
     https://phpinsights.com/
 
     PHP のコード品質分析ツール, 循環度などを測定して表示してくれる
+
+* Clean Code PHP
+
+    https://github.com/piotrplenik/clean-code-php
+
+    PHP のモダンなコードの書き方の解説, 今はちょっと古いかも..
