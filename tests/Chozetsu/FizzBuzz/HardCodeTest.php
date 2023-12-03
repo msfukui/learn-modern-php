@@ -8,23 +8,21 @@ use PHPUnit\Framework\TestCase;
 
 final class HardCodeTest extends TestCase
 {
-    public function testFizzBuzzIn3(): void
+    public static function FizzBuzzDataProviders(): array
     {
-        $this->assertSame('Fizz', HardCode::fizz_buzz(3));
+        return [
+            'in 3'  => [3, 'Fizz'],
+            'in 5'  => [5, 'Buzz'],
+            'in 1'  => [1, '1'],
+            'in 15' => [15, 'FizzBuzz'],
+        ];
     }
 
-    public function testFizzBuzzIn5(): void
+    /**
+     * @dataProvider FizzBuzzDataProviders
+     */
+    public function testFizzBuzz($param, $actual): void
     {
-        $this->assertSame('Buzz', HardCode::fizz_buzz(5));
-    }
-
-    public function testFizzBuzzIn1(): void
-    {
-        $this->assertSame('1', HardCode::fizz_buzz(1));
-    }
-
-    public function testFizzBuzzIn15(): void
-    {
-        $this->assertSame('FizzBuzz', HardCode::fizz_buzz(15));
+        $this->assertSame($actual, HardCode::fizz_buzz($param));
     }
 }
