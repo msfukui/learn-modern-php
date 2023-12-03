@@ -8,9 +8,13 @@ final class HardCode
 {
     public static function fizz_buzz(int $number): string
     {
-        if ($number === 3) {
+        if ($number % 15 === 0) {
+            return 'FizzBuzz';
+        } elseif ($number % 3 === 0) {
             return 'Fizz';
+        } elseif ($number % 5 === 0) {
+            return 'Buzz';
         }
-        return 'Buzz';
+        return (string)$number;
     }
 }
