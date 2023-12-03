@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LearnModernPhp\FizzBuzz;
+namespace LearnModernPhp\Chozetsu\FizzBuzz;
 
 use PHPUnit\Framework\TestCase;
 
