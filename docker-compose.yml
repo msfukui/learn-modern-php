@@ -1,0 +1,12 @@
+version: '2'
+services:
+  debug:
+    build: .
+    image: php8.3-cli
+    container_name: php8.3-cli-debug
+    command: bash -c "composer install && bin/phpd"
+    tty: true
+    volumes:
+      - .:/app
+    ports:
+      - "8123:8123"
