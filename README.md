@@ -224,7 +224,7 @@ Using cache file ".php-cs-fixer.cache".
 
 設定ファイルは `.php-cs-fixer.dist.php` が共通で使うもの, `.php-cs-fixer.php` が個人で使うものとのことです。
 
-このため .gitignore には `.php-cs-fixer.dist.php` とキャッシュの `.php-cs-fixer.cache` を追加します。
+このため .gitignore には `.php-cs-fixer.php` とキャッシュの `.php-cs-fixer.cache` を追加します。
 
 ### PHPStan
 
