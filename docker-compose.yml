@@ -5,6 +5,8 @@ services:
     image: php8.3-cli
     container_name: php8.3-cli-debug
     command: bash -c "composer install && bin/phpd"
+    environment:
+      - PHP_CS_FIXER_IGNORE_ENV=1
     tty: true
     volumes:
       - .:/app
