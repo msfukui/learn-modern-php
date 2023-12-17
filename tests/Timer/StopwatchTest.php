@@ -11,8 +11,8 @@ final class StopwatchTest extends TestCase
     public function testElapsed()
     {
         $stopwatch = new Stopwatch();
-        $stopwatch->start("1");
-        $stopwatch->stop("2");
+        $stopwatch->start(1);
+        $stopwatch->stop(2);
         $this->assertSame(1, $stopwatch->elapsed());
     }
 }
