@@ -226,6 +226,44 @@ Using cache file ".php-cs-fixer.cache".
 
 このため .gitignore には `.php-cs-fixer.php` とキャッシュの `.php-cs-fixer.cache` を追加します。
 
+### PHP MESS Detector
+
+https://phpmd.org/rules/index.html
+
+```
+# composer require --dev phpmd/phpmd
+./composer.json has been updated
+Running composer update phpmd/phpmd
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 5 installs, 0 updates, 0 removals
+  - Locking pdepend/pdepend (2.16.2)
+  - Locking phpmd/phpmd (2.15.0)
+  - Locking symfony/config (v7.0.0)
+  - Locking symfony/dependency-injection (v7.0.1)
+  - Locking symfony/var-exporter (v7.0.1)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 5 installs, 0 updates, 0 removals
+  - Downloading symfony/var-exporter (v7.0.1)
+  - Downloading symfony/dependency-injection (v7.0.1)
+  - Downloading symfony/config (v7.0.0)
+  - Downloading pdepend/pdepend (2.16.2)
+  - Downloading phpmd/phpmd (2.15.0)
+  - Installing symfony/var-exporter (v7.0.1): Extracting archive
+  - Installing symfony/dependency-injection (v7.0.1): Extracting archive
+  - Installing symfony/config (v7.0.0): Extracting archive
+  - Installing pdepend/pdepend (2.16.2): Extracting archive
+  - Installing phpmd/phpmd (2.15.0): Extracting archive
+Generating autoload files
+51 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+No security vulnerability advisories found.
+Using version ^2.15 for phpmd/phpmd
+$ ./vendor/bin/phpmd --version
+PHPMD 2.15.0
+```
+
 ### PHPStan
 
 ```
@@ -511,3 +549,9 @@ http://localhost:8123/(任意のパス名) にアクセスします。
     https://github.com/piotrplenik/clean-code-php
 
     PHP のモダンなコードの書き方の解説, 今はちょっと古いかも..
+
+* PHP MESS Detector (phpmd)
+
+    https://phpmd.org/
+
+    PHP のコード品質分析ツール, メトリクスを測定して表示してくれる

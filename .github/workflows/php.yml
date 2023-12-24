@@ -34,6 +34,9 @@ jobs:
     - name: Format
       run: vendor/bin/php-cs-fixer fix --dry-run --diff
 
+    - name: Cyclomatic complexity
+      run: composer phpmd:ci
+
     - name: TypeChecking
       run: vendor/bin/phpstan analyse src tests
 
