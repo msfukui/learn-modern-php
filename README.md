@@ -18,11 +18,11 @@
 
 * [x] サンプルアプリを書く
 
+* [x] 開発環境をコンテナ化する
+
 * [ ] E2E テストツールを入れる
 
 * [ ] プライベートクラスタ環境にデプロイする
-
-* [ ] 開発環境をコンテナ化する
 
 ## 幾つかの前提条件
 
@@ -394,164 +394,165 @@ http://localhost:8123/(任意のパス名) にアクセスします。
 
 ### FizzBuzz
 
-「PHP で理解するオブジェクト指向の活用 ちょうぜつソフトウェア設計入門」(ISBN987-4-297-13234-7) の「第5章 オブジェクト指向原則 SOLID」にある、FizzBuzz のハードコード版と抽象モデル版のそれぞれの実装とテストコードを写経したものです。 (P.85-90)
+「PHP で理解するオブジェクト指向の活用 ちょうぜつソフトウェア設計入門」(ISBN987-4-297-13234-7) の「第5章 オブジェクト指向原則
+SOLID」にある、FizzBuzz のハードコード版と抽象モデル版のそれぞれの実装とテストコードを写経したものです。 (P.85-90)
 
 ## 参考リンク
 
 * モダンな PHP の開発の学び方
 
-    https://okzk.org/blog/how-to-learn-modern-php/
+  https://okzk.org/blog/how-to-learn-modern-php/
 
 * PHP: The Right Way
 
-    http://ja.phptherightway.com/
+  http://ja.phptherightway.com/
 
 * PHP Manual
 
-    https://www.php.net/manual/
+  https://www.php.net/manual/
 
 * PHPUnit
 
-    https://phpunit.de/
+  https://phpunit.de/
 
 * PHP Coding Standards Fixer
 
-    https://github.com/PHP-CS-Fixer/PHP-CS-Fixer
+  https://github.com/PHP-CS-Fixer/PHP-CS-Fixer
 
-* Setup PHP Action - Actions - Github Marketplace 
+* Setup PHP Action - Actions - Github Marketplace
 
-    https://github.com/marketplace/actions/setup-php-action
+  https://github.com/marketplace/actions/setup-php-action
 
 * PHP Standards Recommendations
 
-    https://www.php-fig.org/psr/
+  https://www.php-fig.org/psr/
 
-    PHP のおすすめの規約やインタフェースの集まり
+  PHP のおすすめの規約やインタフェースの集まり
 
-    公式ではないが PHP で影響力のある人たちが集まっている
+  公式ではないが PHP で影響力のある人たちが集まっている
 
     * PSR-1 Coding Style Guide  
       PSR-12 Extended Coding Style Guide
 
-        https://www.php-fig.org/psr/psr-1
+      https://www.php-fig.org/psr/psr-1
 
-        https://www.php-fig.org/psr/psr-12
+      https://www.php-fig.org/psr/psr-12
 
-        php-cs-fixer の設定でお世話になっている
+      php-cs-fixer の設定でお世話になっている
 
     * PSR-4 Autoloading Standard
 
-        https://www.php-fig.org/psr/psr-4
+      https://www.php-fig.org/psr/psr-4
 
-        composer の autoload の理解に
+      composer の autoload の理解に
 
     * PSR-7 HTTP Message Interface  
       PSR-15 HTTP Handlers  
       PSR-17 HTTP Factories  
-      PSR-18: HTTP Client  
+      PSR-18: HTTP Client
 
-        https://www.php-fig.org/psr/psr-7
+      https://www.php-fig.org/psr/psr-7
 
-        https://www.php-fig.org/psr/psr-15
+      https://www.php-fig.org/psr/psr-15
 
-        https://www.php-fig.org/psr/psr-17
+      https://www.php-fig.org/psr/psr-17
 
-        https://www.php-fig.org/psr/psr-18
+      https://www.php-fig.org/psr/psr-18
 
-        モダン(?)な Web アプリケーションフレームワークの理解に
+      モダン(?)な Web アプリケーションフレームワークの理解に
 
     * PSR-11 Container Interface
 
-        https://www.php-fig.org/psr/psr-11
+      https://www.php-fig.org/psr/psr-11
 
-        DI コンテナの理解に
+      DI コンテナの理解に
 
     * PSR の誤解
 
-        https://qiita.com/tadsan/items/942a381e952e12a8fa5a
+      https://qiita.com/tadsan/items/942a381e952e12a8fa5a
 
-        古い記事だが PSR の意味について明確に記載されている
+      古い記事だが PSR の意味について明確に記載されている
 
 * 作って理解する DI コンテナ
 
-    https://tadsan.fanbox.cc/posts/2061773
+  https://tadsan.fanbox.cc/posts/2061773
 
-    constractor injection の簡易 DI コンテナの実装サンプルと背景説明
+  constractor injection の簡易 DI コンテナの実装サンプルと背景説明
 
-    コード全体は以下の様です
+  コード全体は以下の様です
 
-    https://github.com/bag2php/container
+  https://github.com/bag2php/container
 
 * Router 関連
 
-    'PHP Router' と検索に入力すると先頭に '自作' とサジェストされるの良い
+  'PHP Router' と検索に入力すると先頭に '自作' とサジェストされるの良い
 
     * PHPで高速に動作するURLルーティングを自作してみた
 
-        https://devpixiv.hatenablog.com/entry/2015/12/13/145741
+      https://devpixiv.hatenablog.com/entry/2015/12/13/145741
 
     * PHP - ルーティングを自作してみた
 
-        https://www.coccoto.com/2020/02/07.html
+      https://www.coccoto.com/2020/02/07.html
 
     * kamiya-kei/LaralikeRouter
 
-        https://github.com/kamiya-kei/LaralikeRouter
+      https://github.com/kamiya-kei/LaralikeRouter
 
     * PHPでURLルーティングを自作する
 
-        https://speakerdeck.com/bmf_san/phpdeurlruteinguwozi-zuo-suru
+      https://speakerdeck.com/bmf_san/phpdeurlruteinguwozi-zuo-suru
 
     * PHP8でフレームワークを作ってみた
 
-        https://zenn.dev/tasteck/articles/f8995584904959
+      https://zenn.dev/tasteck/articles/f8995584904959
 
     * PSR-7とPSR-15を使ったWebアプリケーション開発
 
-        https://emonkak.hatenablog.com/entry/2016/12/09/114231
+      https://emonkak.hatenablog.com/entry/2016/12/09/114231
 
-        https://github.com/emonkak/php-router
+      https://github.com/emonkak/php-router
 
     * PSR-HTTPシリーズを理解するための情報源
 
-        https://scrapbox.io/php/PSR-HTTP%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E6%83%85%E5%A0%B1%E6%BA%90
+      https://scrapbox.io/php/PSR-HTTP%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E6%83%85%E5%A0%B1%E6%BA%90
 
     * Rails のルーティング
 
-        https://railsguides.jp/routing.html
+      https://railsguides.jp/routing.html
 
-        ルーティングの書き方の参考に
+      ルーティングの書き方の参考に
 
     * PSR-15 Request Handlerから理解するMiddlewareの仕組み
 
-        https://speakerdeck.com/n1215/psr-15-request-handlerkarali-jie-surumiddlewarefalseshi-zu-mi
+      https://speakerdeck.com/n1215/psr-15-request-handlerkarali-jie-surumiddlewarefalseshi-zu-mi
 
 * deptrac
 
-    https://qossmic.github.io/deptrac/
+  https://qossmic.github.io/deptrac/
 
-    PHP の静的解析ツール, アーキテクチャテストに使われる, 一部は PHPStan と重複
+  PHP の静的解析ツール, アーキテクチャテストに使われる, 一部は PHPStan と重複
 
 * PHPStan
 
-    https://phpstan.org/
+  https://phpstan.org/
 
-    PHP の静的解析ツール, バグ検出, PHPDoc による拡張された型検査などの機能を提供
+  PHP の静的解析ツール, バグ検出, PHPDoc による拡張された型検査などの機能を提供
 
 * PHP Insights
 
-    https://phpinsights.com/
+  https://phpinsights.com/
 
-    PHP のコード品質分析ツール, 循環度などを測定して表示してくれる
+  PHP のコード品質分析ツール, 循環度などを測定して表示してくれる
 
 * Clean Code PHP
 
-    https://github.com/piotrplenik/clean-code-php
+  https://github.com/piotrplenik/clean-code-php
 
-    PHP のモダンなコードの書き方の解説, 今はちょっと古いかも..
+  PHP のモダンなコードの書き方の解説, 今はちょっと古いかも..
 
 * PHP MESS Detector (phpmd)
 
-    https://phpmd.org/
+  https://phpmd.org/
 
-    PHP のコード品質分析ツール, メトリクスを測定して表示してくれる
+  PHP のコード品質分析ツール, メトリクスを測定して表示してくれる
