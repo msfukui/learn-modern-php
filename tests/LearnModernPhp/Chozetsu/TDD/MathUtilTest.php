@@ -2,19 +2,28 @@
 
 namespace LearnModernPhp\Chozetsu\TDD;
 
+use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 
 class MathUtilTest extends TestCase
 {
+    /**
+     * @throws Exception
+     */
     public function testSaturate(): void
     {
-        $math = new MathUtil();
-        $this->assertEquals(2, $math->saturate(2, 1, 3));
+        $mathStub = $this->createStub(Math::class);
+        $mathUtil = new MathUtil($mathStub);
 
-        $this->assertEquals(1, $math->saturate(0, 1, 3));
-        $this->assertEquals(3, $math->saturate(4, 1, 3));
+        $mathStub->expects($this->atLeastOnce())
+            ->method('max')
+            ->with($this->equalTo(2), $this->equalTo(1))
+            ->willReturn(2);
+        $mathStub->expects($this->atLeastOnce())
+            ->method('min')
+            ->with($this->equalTo(2), $this->equalTo(3))
+            ->willReturn(2);
 
-        $this->assertEquals(1, $math->saturate(1, 1, 3));
-        $this->assertEquals(3, $math->saturate(3, 1, 3));
+        $this->assertEquals(2, $mathUtil->saturate(2, 1, 3));
     }
 }

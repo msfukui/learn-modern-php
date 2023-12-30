@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace LearnModernPhp\Chozetsu\TDD;
 
-final class MathUtil
+class MathUtil
 {
-    public function __construct()
+    public function __construct(protected readonly Math $math)
     {
     }
 
     public function saturate(int $value, int $min, int $max): int
     {
-        $math = new Math();
-        return $math->min($math->max($value, $min), $max);
+        return $this->math->min($this->math->max($value, $min), $max);
     }
 }

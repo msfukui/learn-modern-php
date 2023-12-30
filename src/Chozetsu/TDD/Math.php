@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace LearnModernPhp\Chozetsu\TDD;
 
-final class Math
+class Math
 {
     public function __construct()
     {
