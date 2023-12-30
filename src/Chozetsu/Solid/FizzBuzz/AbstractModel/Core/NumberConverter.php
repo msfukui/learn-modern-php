@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LearnModernPhp\Chozetsu\FizzBuzz\Core;
+namespace LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Core;
 
 interface ReplaceRuleInterface
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LearnModernPhp\Chozetsu\FizzBuzz\Spec;
+namespace LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec;
 
-use LearnModernPhp\Chozetsu\FizzBuzz\Core;
+use LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Core;
 
 final class PassThroughRule implements Core\ReplaceRuleInterface
 {

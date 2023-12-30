@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LearnModernPhp\Chozetsu\FizzBuzz;
+namespace LearnModernPhp\Chozetsu\Solid\FizzBuzz\HardCode;
 
 final class HardCode
 {

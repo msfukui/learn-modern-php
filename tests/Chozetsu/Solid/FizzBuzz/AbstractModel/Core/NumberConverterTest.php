@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LearnModernPhp\Chozetsu\FizzBuzz\Core;
+namespace LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Core;
 
 use PHPUnit\Framework\TestCase;
 
-use LearnModernPhp\Chozetsu\FizzBuzz\Spec;
+use LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec;
 
 final class NumberConverterTest extends TestCase
 {
