@@ -23,8 +23,8 @@ jobs:
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.2'
-        extensions: none, mbstring
+        php-version: '8.3'
+        extensions: none, mbstring, SimpleXML
         coverage: xdebug
         tools: php-cs-fixer, phpunit
 
