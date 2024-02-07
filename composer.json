@@ -8,14 +8,19 @@
     "phpunit/phpunit": "^10.3",
     "friendsofphp/php-cs-fixer": "^3.26",
     "phpstan/phpstan": "^1.10",
-    "phpmd/phpmd": "^2.15"
+    "phpmd/phpmd": "^2.15",
+    "pestphp/pest": "^2.33"
   },
   "require": {
-    "nyholm/psr7": "^1.8"
+    "nyholm/psr7": "^1.8",
+    "symfony/config": "^7.0",
+    "symfony/dependency-injection": "^7.0",
+    "symfony/yaml": "^7.0"
   },
   "config": {
     "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "pestphp/pest-plugin": true
     }
   },
   "scripts": {
