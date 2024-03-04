@@ -429,8 +429,6 @@ SOLID」にある、FizzBuzz のハードコード版と抽象モデル版のそ
 
   PHP のおすすめの規約やインタフェースの集まり
 
-  公式ではないが PHP で影響力のある人たちが集まっている
-
     * PSR-1 Coding Style Guide  
       PSR-12 Extended Coding Style Guide
 
@@ -556,3 +554,7 @@ SOLID」にある、FizzBuzz のハードコード版と抽象モデル版のそ
   https://phpmd.org/
 
   PHP のコード品質分析ツール, メトリクスを測定して表示してくれる
+
+* 現在時刻が関わるユニットテストから、テスト容易性設計を学ぶ
+
+    https://t-wada.hatenablog.jp/entry/design-for-testability

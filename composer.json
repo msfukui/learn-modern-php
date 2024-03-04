@@ -8,14 +8,17 @@
     "phpunit/phpunit": "^10.3",
     "friendsofphp/php-cs-fixer": "^3.26",
     "phpstan/phpstan": "^1.10",
-    "phpmd/phpmd": "^2.15"
+    "phpmd/phpmd": "^2.15",
+    "pestphp/pest-plugin-watch": "^2.1",
+    "pestphp/pest": "^2.34"
   },
   "require": {
     "nyholm/psr7": "^1.8"
   },
   "config": {
     "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "pestphp/pest-plugin": true
     }
   },
   "scripts": {
