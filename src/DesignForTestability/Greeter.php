@@ -10,7 +10,7 @@ class Greeter
 {
     public function greet(DateTimeImmutable $now = new DateTimeImmutable('now'), string $locale = 'ja'): string
     {
-        $hour = (int) $now->format('H');
+        $hour = (int)$now->format('H');
         if ($hour >= 18 || $hour < 5) {
             return $this->localeMessage('こんばんは', $locale);
         }
