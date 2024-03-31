@@ -19,11 +19,11 @@ OOC 2024 のノベルティグッズとして提供されたクラス図を元�
 classDiagram
     Player "1" -- "0..*" UnreleasedCard : "has"
     Card <|-- UnreleasedCard
-    Card <|-- PublishedCard
+    Card <|-- ReleasedCard
     Field o-- Row
-    Row "0..1" -- "1" PublishedCard
-    Row "1" o-- "1..13" PublishedCard
-    Row "0..1" -- "1" PublishedCard
+    Row "0..1" -- "1" ReleasedCard
+    Row "1" o-- "1..13" ReleasedCard
+    Row "0..1" -- "1" ReleasedCard
     class Card {
       Suit
       Rank
