@@ -10,6 +10,9 @@ use LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec;
 
 final class NumberConverterTest extends TestCase
 {
+    /**
+     * @return array<string, array<int, string>>
+     */
     public static function FizzBuzzDataProviders(): array
     {
         return [
@@ -23,7 +26,7 @@ final class NumberConverterTest extends TestCase
     /**
      * @dataProvider FizzBuzzDataProviders
      */
-    public function testFizzBuzz($param, $actual): void
+    public function testFizzBuzz(int $param, string $actual): void
     {
         $fizzBuzz = new NumberConverter(
             [

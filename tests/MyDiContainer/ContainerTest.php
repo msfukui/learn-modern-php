@@ -30,6 +30,9 @@ final class ContainerTest extends TestCase
         ]);
     }
 
+    /**
+     * @return array<string, array{0: string, 1: mixed}>
+     */
     public static function ContainerGetOkForPsr17FactoryProvider(): array
     {
         return [
@@ -65,6 +68,9 @@ final class ContainerTest extends TestCase
         $this->container->get('anniversary');
     }
 
+    /**
+     * @return array<string, array{0: string}>
+     */
     public static function ContainerHasOkForPsr17FactoryProvider(): array
     {
         return [

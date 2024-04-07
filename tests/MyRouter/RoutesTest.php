@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 final class RoutesTest extends TestCase
 {
+    /**
+     * @var callable
+     */
     private static $drawing_get;
 
     protected function setUp(): void

@@ -12,7 +12,9 @@ interface ReplaceRuleInterface
 
 final class NumberConverter
 {
-    /* @param ReplaceRuleInterface[] $rules */
+    /**
+     * @param array<ReplaceRuleInterface> $rules
+     */
     public function __construct(
         protected array $rules
     ) {

@@ -11,14 +11,14 @@ use Psr\Http\Message\StreamInterface;
 
 final class JsonResponse implements JsonSerializable, ResponseInterface
 {
-    /* php-stan-var array<K, V> */
+    /** @var array<int|string, mixed> */
     private array $data;
 
     protected StreamFactoryInterface $streamFactory;
     protected ResponseInterface $innerResponse;
 
     /**
-     * @param array<K, V> $data
+     * @param array<int|string, mixed> $data
      */
     public function __construct(
         ?array $data,
@@ -34,7 +34,7 @@ final class JsonResponse implements JsonSerializable, ResponseInterface
     }
 
     /**
-     * @phpstan-return array<K,V>
+     * @return array<int|string, mixed>
      */
     public function jsonSerialize(): array
     {
@@ -42,10 +42,10 @@ final class JsonResponse implements JsonSerializable, ResponseInterface
     }
 
     /**
-     * @phpstan-param array<K,V> $data
-     * @return JsonResponse<K,V>
+     * @param array<int|string, mixed> $data
+     * @return static
      */
-    public function withJsonData(?array $data): null|ResponseInterface|StreamFactoryInterface
+    public function withJsonData(?array $data): self
     {
         return new static(
             $this->data ?? null,

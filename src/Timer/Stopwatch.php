@@ -9,12 +9,12 @@ final class Stopwatch
     private int $start;
     private int $end;
 
-    public function start($now): void
+    public function start(int $now): void
     {
         $this->start = $now;
     }
 
-    public function stop($now): void
+    public function stop(int $now): void
     {
         $this->end = $now;
     }

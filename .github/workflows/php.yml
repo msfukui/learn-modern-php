@@ -26,7 +26,6 @@ jobs:
         php-version: '8.3'
         extensions: none, mbstring, SimpleXML
         coverage: xdebug
-        tools: php-cs-fixer, phpunit
 
     - name: Install Composer Dependencies
       run: composer install
@@ -41,4 +40,4 @@ jobs:
       run: vendor/bin/phpstan analyse src tests
 
     - name: UnitTest
-      run: vendor/bin/phpunit --display-warning --display-notice tests
+      run: vendor/bin/pest tests

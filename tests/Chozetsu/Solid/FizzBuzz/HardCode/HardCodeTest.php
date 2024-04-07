@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 final class HardCodeTest extends TestCase
 {
+    /**
+     * @return array<string, array<int, string>>
+     */
     public static function FizzBuzzDataProviders(): array
     {
         return [
@@ -21,7 +24,7 @@ final class HardCodeTest extends TestCase
     /**
      * @dataProvider FizzBuzzDataProviders
      */
-    public function testFizzBuzz($param, $actual): void
+    public function testFizzBuzz(int $param, string $actual): void
     {
         $this->assertSame($actual, HardCode::fizz_buzz($param));
     }

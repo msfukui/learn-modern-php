@@ -2,16 +2,16 @@
 
 namespace LearnModernPhp\Chozetsu\TDD;
 
-use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 
 class MathUtilTest extends TestCase
 {
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testSaturate(): void
     {
+        /** @var Math|\PHPUnit\Framework\MockObject\MockObject $mathStub */
         $mathStub = $this->createStub(Math::class);
         $mathUtil = new MathUtil($mathStub);
 

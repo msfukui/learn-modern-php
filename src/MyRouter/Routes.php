@@ -6,6 +6,9 @@ namespace LearnModernPhp\MyRouter;
 
 final class Routes
 {
+    /**
+     * @var array<string, array<string, mixed>>
+     */
     private static $routes = [];
 
     public static function draw(callable $f): void
@@ -67,6 +70,9 @@ final class Routes
         return;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private static function search(string $method, string $path): array
     {
         if (empty(self::$routes[$method])) {

@@ -6,6 +6,11 @@ namespace LearnModernPhp\MyCombinations;
 
 final class Combinations
 {
+    /**
+     * @param array<int> $elements
+     * @param int $length
+     * @return array<array<int>>
+     */
     public static function run(array $elements, int $length): array
     {
         if ($length <= 1) {

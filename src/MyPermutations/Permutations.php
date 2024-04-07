@@ -6,6 +6,10 @@ namespace LearnModernPhp\MyPermutations;
 
 final class Permutations
 {
+    /**
+     * @param array<int> $elements
+     * @return array<array<int>>
+     */
     public static function run(array $elements): array
     {
         if (count($elements) <= 1) {

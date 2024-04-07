@@ -10,12 +10,12 @@ class Math
     {
     }
 
-    public function min(int $a, $b): int
+    public function min(int $a, int $b): int
     {
         return $a < $b ? $a : $b;
     }
 
-    public function max(int $a, $b): int
+    public function max(int $a, int $b): int
     {
         return $a > $b ? $a : $b;
     }

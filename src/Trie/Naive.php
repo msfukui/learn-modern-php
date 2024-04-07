@@ -6,6 +6,12 @@ namespace LearnModernPhp\Trie;
 
 final class Naive
 {
+    /**
+     * @param string $method
+     * @param string $path
+     * @param array<string, mixed> $tree
+     * @return array<string, mixed>
+     */
     public static function run(string $method, string $path, array $tree): array
     {
         if (empty($tree)) {

@@ -44,13 +44,13 @@ final class Autowire implements FetcherInterface
 
         if ($type instanceof \ReflectionUnionType) {
             throw new \InvalidArgumentException(
-                "Fail to autowire {$this->className}, because do not support union type yet."
+                "Fail to autowire {$this->className}, because do not support union/intersection type yet."
             );
         }
 
         $name = $parameter->getName();
 
-        if ($type === null || $type->isBuiltIn()) {
+        if ($type === null || (method_exists($type, 'isBuiltIn') && $type->isBuiltIn())) {
             if (!$container->has($name)) {
                 throw new \InvalidArgumentException(
                     "Fail to autowire {$this->className}, because not found argument '{$name}' in the container."

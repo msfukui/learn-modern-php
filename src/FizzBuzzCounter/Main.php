@@ -152,7 +152,7 @@ function main4(): void
     echo "$s\n";
 }
 
-function benchmark(callable $func)
+function benchmark(callable $func): void
 {
     $start = microtime(true);
     $func();

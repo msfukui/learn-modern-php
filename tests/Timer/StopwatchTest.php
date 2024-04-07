@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 final class StopwatchTest extends TestCase
 {
-    public function testElapsed()
+    public function testElapsed(): void
     {
         $stopwatch = new Stopwatch();
         $stopwatch->start(1);

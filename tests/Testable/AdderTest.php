@@ -11,6 +11,9 @@ final class AdderTest extends TestCase
 {
     private Adder $adder;
 
+    /**
+     * @return array<string, array<int>>
+     */
     public static function addProvider(): array
     {
         return [

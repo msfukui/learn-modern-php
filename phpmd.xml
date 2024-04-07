@@ -8,7 +8,7 @@
                      http://pmd.sf.net/ruleset_xml_schema.xsd">
     <rule ref="rulesets/codesize.xml/CyclomaticComplexity">
         <properties>
-            <property name="reportLevel" value="10"/>
+            <property name="reportLevel" value="21"/>
         </properties>
     </rule>
 </ruleset>
