@@ -1,7 +1,15 @@
 {
+  "require": {
+    "php": "^8.2"
+  },
   "autoload": {
     "psr-4": {
       "LearnModernPhp\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LearnModernPhp\\": "tests/"
     }
   },
   "require-dev": {

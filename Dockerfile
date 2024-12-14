@@ -1,4 +1,4 @@
-FROM php:8.3-cli
+FROM php:8.4-cli
 
 RUN apt update -y && apt upgrade -y \
     && apt install -y zip \

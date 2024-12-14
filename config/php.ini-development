@@ -1,11 +1,5 @@
-display_errors=On
-display_startup_errors=On
-error_reporting=-1
-log_errors=On
-log_errors_max_len=0
-output_buffering=On
-xdebug.show_exception_trace=0
-xdebug.mode=coverage
-zend.assertions=1
-assert.exception=1
-memory_limit=-1
+[xdebug]
+xdebug.client_host = host.docker.internal
+xdebug.client_port = 9003
+xdebug.mode = coverage,debug
+xdebug.discover_client_host = 0

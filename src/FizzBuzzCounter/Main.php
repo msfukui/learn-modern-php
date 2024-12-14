@@ -141,7 +141,7 @@ function main4(): void
     for ($i = 1; $i <= 100; $i++) {
         if ($i % 15 === 0) {
             $s .= "FizzBuzz ";
-        } elseif($i % 3 === 0) {
+        } elseif ($i % 3 === 0) {
             $s .= "Fizz ";
         } elseif ($i % 5 === 0) {
             $s .= "Buzz ";

@@ -1,9 +1,8 @@
-version: '2'
 services:
   debug:
     build: .
-    image: php8.3-cli
-    container_name: php8.3-cli-debug
+    image: php8.4-cli
+    container_name: php8.4-cli-learn-modern-php-debug
     command: bash -c "composer install && bin/phpd"
     environment:
       - PHP_CS_FIXER_IGNORE_ENV=1
