@@ -4,13 +4,29 @@ declare(strict_types=1);
 
 namespace LearnModernPhp\Chozetsu\DependencyInjection\FizzBuzz;
 
+use Exception;
+use LearnModernPhp\Chozetsu\DependencyInjection\FizzBuzz\App\FizzBuzzSequencePrinter;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+
 final readonly class App
 {
+    /**
+     * @throws Exception
+     */
     public static function main(): void
     {
-        $factory = new FizzBuzzAppFactory();
-        $printer = $factory->create();
-        $printer->printRange(1, 100);
+        $containerBuilder = new ContainerBuilder();
+        $loader = new YamlFileLoader(
+            $containerBuilder,
+            new FileLocator(__DIR__ . '/../../../../config'),
+        );
+        $loader->load('services.yaml');
+        $containerBuilder->compile();
+
+        $containerBuilder->get(FizzBuzzSequencePrinter::class)
+            ->printRange(1, 100);
     }
 }
 

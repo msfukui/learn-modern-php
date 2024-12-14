@@ -1,0 +1,26 @@
+services:
+  LearnModernPhp\Chozetsu\DependencyInjection\FizzBuzz\App\FizzBuzzSequencePrinter:
+    public: true
+    arguments:
+      $fizzBuzz: '@LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Core\NumberConverter'
+      $output: '@LearnModernPhp\Chozetsu\DependencyInjection\FizzBuzz\App\OutputInterface'
+
+  LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Core\NumberConverter:
+    arguments:
+      $rules:
+        - '@fizzbuzz.rule.fizz'
+        - '@fizzbuzz.rule.buzz'
+        - '@LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec\PassThroughRule'
+
+  fizzbuzz.rule.fizz:
+    class: LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec\CyclicNumberRule
+    arguments: [3, 'Fizz']
+
+  fizzbuzz.rule.buzz:
+    class: LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec\CyclicNumberRule
+    arguments: [5, 'Buzz']
+
+  LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec\PassThroughRule: ~
+
+  LearnModernPhp\Chozetsu\DependencyInjection\FizzBuzz\App\OutputInterface:
+    class: LearnModernPhp\Chozetsu\DependencyInjection\FizzBuzz\App\ConsoleOutput
