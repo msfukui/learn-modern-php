@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace LearnModernPhp\Chozetsu\DependencyInjection\FizzBuzz\App;
 
 use LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Core\NumberConverter;
+use PHPUnit\Framework\MockObject\Rule\InvokedCount;
 
 describe('FizzBuzzSequencePrinter', function () {
 
@@ -32,11 +33,14 @@ describe('FizzBuzzSequencePrinter', function () {
             $output->expects($calls)
                 ->method('write')
                 ->willReturnCallback(function (string $data) use ($calls) {
-                    return match ($calls->numberOfInvocations()) {
-                        1 => expect($data)->toBe('1 1' . PHP_EOL),
-                        2 => expect($data)->toBe('2 2' . PHP_EOL),
-                        3 => expect($data)->toBe('3 Fizz' . PHP_EOL),
-                    };
+                    $n = $calls->numberOfInvocations();
+                    if ($n === 1) {
+                        expect($data)->toBe('1 1' . PHP_EOL);
+                    } elseif ($n === 2) {
+                        expect($data)->toBe('2 2' . PHP_EOL);
+                    } elseif ($n === 3) {
+                        expect($data)->toBe('3 Fizz' . PHP_EOL);
+                    }
                 });
 
             $printer = new FizzBuzzSequencePrinter($converter, $output);
