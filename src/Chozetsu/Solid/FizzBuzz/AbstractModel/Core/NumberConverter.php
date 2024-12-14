@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Core;
 
-final readonly class NumberConverter
+class NumberConverter
 {
     /**
      * @param array<ReplaceRuleInterface> $rules
