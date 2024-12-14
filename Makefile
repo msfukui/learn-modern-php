@@ -6,8 +6,8 @@ lint:
 fix:
 	-@docker compose exec debug vendor/bin/php-cs-fixer fix --diff
 
-#md:
-#	-@docker compose exec debug composer phpmd --color
+md:
+	-@docker compose exec debug composer phpmd
 
 stan:
 	-@docker compose exec debug vendor/bin/phpstan analyse src tests
