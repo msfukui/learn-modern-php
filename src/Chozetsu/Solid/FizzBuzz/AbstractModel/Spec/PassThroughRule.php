@@ -6,7 +6,7 @@ namespace LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec;
 
 use LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Core;
 
-final class PassThroughRule implements Core\ReplaceRuleInterface
+final readonly class PassThroughRule implements Core\ReplaceRuleInterface
 {
     public function match(string $carry, int $n): bool
     {

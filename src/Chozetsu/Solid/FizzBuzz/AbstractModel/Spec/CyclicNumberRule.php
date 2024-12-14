@@ -6,7 +6,7 @@ namespace LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec;
 
 use LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Core;
 
-final class CyclicNumberRule implements Core\ReplaceRuleInterface
+final readonly class CyclicNumberRule implements Core\ReplaceRuleInterface
 {
     public function __construct(
         protected int $divisor,
