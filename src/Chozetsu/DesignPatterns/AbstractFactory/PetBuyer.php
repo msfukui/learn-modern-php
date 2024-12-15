@@ -4,17 +4,13 @@ declare(strict_types=1);
 
 namespace LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory;
 
-use InvalidArgumentException;
+use LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Shop\PetShop;
 
-class PetBuyer
+readonly class PetBuyer
 {
-    public function buyPet(string $type): void
+    public function buyPet(PetShop $petShop, string $type): void
     {
-        $pet = match($type) {
-            'cat' => new Cat(),
-            'dog' => new Dog(),
-            default => throw new InvalidArgumentException(),
-        };
+        $pet = $petShop->createPet($type);
         buy($pet);
     }
 }

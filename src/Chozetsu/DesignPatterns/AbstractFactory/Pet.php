@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory;
 
-abstract class Pet
+abstract readonly class Pet
 {
 }
 
