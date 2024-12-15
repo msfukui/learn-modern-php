@@ -22,3 +22,6 @@ services:
   fizzbuzz.rule.buzz:
     class: LearnModernPhp\Chozetsu\Solid\FizzBuzz\AbstractModel\Spec\CyclicNumberRule
     arguments: [ 5, 'Buzz' ]
+
+  LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Shop\PetShopInterface:
+    class: LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Shop\CatAndDogOnlyPetShop
