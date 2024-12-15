@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Shop;
 
 use InvalidArgumentException;
-use LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Cat;
-use LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Dog;
-use LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Pet;
+use LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Buyer\PetShopInterface;
+use LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Buyer\Pet;
 
-readonly class PetShop
+readonly class CatAndDogOnlyPetShop implements PetShopInterface
 {
     public function createPet(string $type): Pet
     {

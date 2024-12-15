@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory;
+namespace LearnModernPhp\Chozetsu\DesignPatterns\AbstractFactory\Buyer;
 
 abstract readonly class Pet
 {

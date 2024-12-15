@@ -1,4 +1,4 @@
-ci: lint stan test
+ci: lint md stan test
 
 lint:
 	-@docker compose exec debug vendor/bin/php-cs-fixer fix --dry-run --diff
