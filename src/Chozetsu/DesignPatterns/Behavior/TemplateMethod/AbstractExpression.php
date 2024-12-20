@@ -10,6 +10,9 @@ use LogicException;
 
 abstract class AbstractExpression implements ExpressionInterface
 {
+    /**
+     * @var ?array<int>
+     */
     protected ?array $vars = null;
 
     public function setVariables(array $vars): void
@@ -20,6 +23,9 @@ abstract class AbstractExpression implements ExpressionInterface
         $this->vars = $vars;
     }
 
+    /**
+     * @param array<int> $vars
+     */
     abstract protected function validate(array $vars): bool;
 
     public function evaluate(): int
