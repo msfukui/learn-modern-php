@@ -8,9 +8,13 @@ use LearnModernPhp\Chozetsu\DesignPatterns\Command\Common\CommandInterface;
 
 final readonly class SelectionItem
 {
+    /**
+     * @param string $label
+     * @param CommandInterface|callable $command
+     */
     public function __construct(
         public string $label,
-        public CommandInterface $command,
+        public mixed $command,
     ) {
     }
 }

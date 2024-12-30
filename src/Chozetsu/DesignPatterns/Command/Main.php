@@ -22,7 +22,12 @@ function createPetSelectionUI(PetShop $shop): SelectionUI
     return $ui;
 }
 
-$ui = createPetSelectionUI(new PetShop());
+$shop = new PetShop();
+$ui = createPetSelectionUI($shop);
+$ui->registerCommand('やっぱり猫をください', function () use ($shop) {
+    // $shop で猫を購入する処理
+    $tmp = $shop;
+});
 echo $ui->help() . PHP_EOL;
 
 $userInput = (int)fgets(STDIN);
